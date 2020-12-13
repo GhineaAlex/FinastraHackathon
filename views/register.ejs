@@ -1,0 +1,72 @@
+<%- include ('./_layouts/header') %>
+
+<h1><%= title %></h1>
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 1200px;">
+        <form method="post" action="/users/register">
+        <div class="form-group input-group ">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <div class="input-mysize"><input type="text" name="nameUniv" class="form-control" placeholder="Numele Universitatii"></div>
+        </div>
+
+        <div class="form-group input-group">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		    </div>
+            <input type="text" name="nameFac" class="form-control" placeholder="Numele Facultatii">
+        </div>
+
+        <div class="form-group input-group">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		    </div>
+            <input type="text" name="email" class="form-control" placeholder="Email">
+        </div>
+
+        <div class="form-group input-group">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		    </div>
+            <input type="text" name="username" class="form-control" placeholder="Nume utilizator">
+        </div>
+    
+        <div class="form-group input-group">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		    </div>
+            <input type="text" name="city" class="form-control" placeholder="Oras">
+        </div>
+        
+        <div class="form-group input-group">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		    </div>
+            <input type="text" name="phoneNumber" class="form-control" placeholder="Numar de telefon">
+        </div>
+    
+        <div class="form-group input-group">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		    </div>
+            <input type="password" name="password" class="form-control" placeholder="Parola">
+        </div>
+
+        <div class="form-group input-group">
+		    <div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		    </div>
+            <input type="password" name="password2" class="form-control" placeholder="Confirma Parola">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Creeaza</button>
+    </form>
+    </article>
+</div>
+        
+    
+</div>
+
+
+<%- include ('./_layouts/footer') %>

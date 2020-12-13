@@ -1,0 +1,30 @@
+<%- include ('./_layouts/header') %>
+
+<h1><%= title %></h1>
+
+<form method="post" action="/users/login">
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 1200px;">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input type="text" name="username" class="form-control" placeholder="Nume utilizator">
+            </div>
+        
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input type="password" name="password" class="form-control" placeholder="Parola">
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Login</button>
+            
+    </article>
+    
+</div>
+</form>
+
+
+<%- include ('./_layouts/footer') %>

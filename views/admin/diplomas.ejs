@@ -1,0 +1,59 @@
+<%- include('../_layouts/adminheader') %>
+
+<h2 class="page-title"> Diplome </h2>
+<a href="/admin/diplomas/add-diploma" class="btn btn-primary">Adauga o noua diploma</a>
+<br><br>
+<div style="margin-bottom:20px; padding:10px; background-color:#66aaf7; color:white;">
+    <p>Cautarea poate fi realizata dupa <strong>student</strong>, <strong>categorie</strong>, <strong>oras</strong></p>  
+    <input class="form-control" id="inputFilter" type="text" placeholder="Search.." />
+</div>
+  
+<% if (count > 0) { %>
+
+<table class="table table-striped" id="diplomaTable">
+    <thead>
+    <tr class="home">
+        <th>CNP</th>
+        <th>Categorie</th>
+        <th>Descriere</th>
+        <th>Oras</th>
+        <th>Preview document</th>
+        <th>Fisierul IPFS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% diplomas.forEach(function(diploma){ %>
+        <tr>
+            <td><%= diploma.student %></td>
+            <td><%= diploma.category %></td>
+            <td><%= diploma.desc %></td>
+            <td><%= diploma.city %></td>
+            <td>
+                <% if (diploma.document == "") { %>
+                <img src="/images/noimage.png">
+                <% } else { %>
+                <img src="/diploma_images/<%= diploma._id %>/<%= diploma.document %>" width=100% height=100%>
+                <% }%>
+            </td>
+            <% var url = "http://127.0.0.1:8080/ipfs/" + diploma.hashId %>
+            <% console.log("url ul este" + url) %>
+            <td><a href= <%=url %>> <%= diploma.hashId %></a></td>
+        </tr>
+    <% }); %>
+    </tbody>
+
+</table>
+<% } else { %>
+<h3 class="text-center">Nu exista nicio diploma alocata</h3>
+<% } %>
+
+<script>
+    $("#inputFilter").on("keyup", function() {
+      var inputValue = $(this).val().toLowerCase();
+      $("#diplomaTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(inputValue) > -1)
+      });
+  });
+</script>
+
+<%- include('../_layouts/adminfooter') %>
