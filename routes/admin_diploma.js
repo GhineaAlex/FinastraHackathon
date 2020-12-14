@@ -8,7 +8,7 @@ var Diploma = require('../models/diploma');
 var auth = require('../config/auth');
 var isUser = auth.isUser;
 var Category = require('../models/category');
-
+var Student = require('../models/student');
 const nodemailer = require('nodemailer');
 console.log("adresa email " + process.env.EMAIL);
 let transporter = nodemailer.createTransport({
@@ -42,27 +42,31 @@ router.get('/add-diploma', isUser, function (req, res) {
     var city = "";
     var desc = "";
     var document = "";
-
-    Category.find(function (err, categories) {
-        res.render('admin/add_diploma', {
-            degree: degree,
-            city: city,
-            desc: desc,
-            categories: categories,
-            document: document
-            
-        });
+    var emailStudent = "";
+    Student.find(function (err, students) {
+        Category.find(function (err, categories){
+            res.render('admin/add_diploma', {
+                degree: degree,
+                city: city,
+                desc: desc,
+                students: students,
+                categories: categories,
+                emailStudent: emailStudent,
+                document: document
+                
+            });
+        })
     });
 });
 
 router.post('/add-diploma', isUser, function (req, res) {
     var imageDocument = req.files !== null ? req.files.document.name : "";
-    req.checkBody('degree', "You need to insert the type of degree").not().isEmpty();
-    req.checkBody('city', "You must insert the city").not().isEmpty();
-    req.checkBody('document', "You must insert a document").isImage(imageDocument)
-    req.checkBody('desc', "You must provide a description").not().isEmpty();
-    req.checkBody('student', "Trebuie sa adaugi numele studentului").not().isEmpty();
-    req.checkBody('emailStudent', "Trebuie sa adaugi un email").not().isEmpty();
+    req.checkBody('degree', "Trebuie sa fie adaugata un tip de licenta (Cu frecventa/Fara frecventa).").not().isEmpty();
+    req.checkBody('city', "Trebuie introdus un oras").not().isEmpty();
+    req.checkBody('document', "Trebuie adaugat un fisier").isImage(imageDocument)
+    req.checkBody('desc', "Trebuie adaugata o descriere").not().isEmpty();
+    req.checkBody('student', "Trebuie adaugat numele studentului").not().isEmpty();
+    req.checkBody('emailStudent', "Trebuie adaugata adresa de email").not().isEmpty();
 
 
     var degree = req.body.degree;
@@ -79,18 +83,7 @@ router.post('/add-diploma', isUser, function (req, res) {
     var errors = req.validationErrors();
 
     if (errors) {
-        // TODO: Mizerie.. de facut un json cu eroare
-        res.json({error: "eroare"});
-        /*
-        Category.find(function (err, categories) {
-            res.render('admin/add_diploma', {
-                errors: errors,
-                degree: degree,
-                city: city,
-                desc: desc,
-                user: req.user
-            });
-        });*/
+        res.json({error: "Eroare la introducerea unei diplome"});
     } else {
         Diploma.findOne({ slug: slug }, function (err, diploma) {
             console.log('path-ul este = ' + fileName);

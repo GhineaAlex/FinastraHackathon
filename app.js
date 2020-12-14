@@ -1,18 +1,17 @@
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const expressValidator = require('express-validator');
 
-var mongoose = require('mongoose');
-var config = require('./config/database');
+const mongoose = require('mongoose');
+const config = require('./config/database');
 
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var expressValidator = require('express-validator');
-var fileUpload = require('express-fileupload');
-var passport = require('passport');
+const fileUpload = require('express-fileupload');
+const passport = require('passport');
 
-// this.context.moment = require("moment"); 
-// this.context.moment.lang(this.context.page.language);
-//Connect to db
+
+//Conexiunea la BD
 mongoose.connect(config.database, {useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -154,7 +153,7 @@ var pages = require('./routes/pages.js');
 var adminPages = require('./routes/admin_pages.js');
 var adminCategories = require('./routes/admin_categories.js');
 var adminStudents = require('./routes/admin_students.js');
-var adminDiplomas = require('./routes/admin_diploma');
+var adminDiplomas = require('./routes/admin_diploma.js');
 var diplomas = require('./routes/diplomas.js');
 var users = require('./routes/users.js')
 
@@ -166,10 +165,9 @@ app.use('/diplomas', diplomas);
 app.use('/', pages);
 app.use('/users', users);
 var moment = require('moment');
-var shortDateFormat = "ddd @ h:mmA"; // this is just an example of storing a date format once so you can change it in one place and have it propagate
-app.locals.moment = moment; // this makes moment available as a variable in every EJS page
+var shortDateFormat = "ddd @ h:mmA"; 
+app.locals.moment = moment; 
 app.locals.shortDateFormat = shortDateFormat;
-//Start the server
 var port = 3000;
 app.listen(port, function(){
 	console.log('Server started on port ' + port);
