@@ -1,0 +1,296 @@
+<div class="home-page-welcome">
+  <div class="uxg-display-6">Welcome</div>
+  <div class="uxg-h3">{{ userName }}</div>
+</div>
+<div class="home-page-product-list">
+  
+  <!-- <div class="home-page-product-item">
+    <mat-card class="uxg-card-product clickable">
+      <span class="uxg-h3 uxg-card-product-name">L</span>
+    </mat-card>
+    <div class="uxg-subtitle-1 home-page-product-item-label">Loans</div>
+  </div> -->
+
+  <!-- <div class="home-page-product-item">
+    <mat-card class="uxg-card-product clickable" (click)="goToAccountsPage()">
+      <span class="uxg-h3 uxg-card-product-name">Ac</span>
+    </mat-card>
+    <div class="uxg-subtitle-1 home-page-product-item-label">Account</div>
+  </div> -->
+
+  <!-- <div class="home-page-product-item">
+    <mat-card class="uxg-card-product clickable">
+      <span class="uxg-h3 uxg-card-product-name">An</span>
+    </mat-card>
+    <div class="uxg-subtitle-1 home-page-product-item-label">Analytics</div>
+  </div> -->
+
+  <div class="home-page-product-item">
+    <!-- <mat-card class="account-detail-card clickable" (click)="goToAccountsPage()"> -->
+    <mat-card class="account-detail-card" style="border-radius: 7px; background-color: transparent !important;">
+      <!-- <mat-card-title>
+        <div>{{ account.nickname }}</div>
+      </mat-card-title> -->
+      <mat-card-content>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="account-card-detail-summary">
+                <div style="margin-top: 15px;" align="center"><img src="data:image/png;base64,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"/></div>
+                <div class="account-card-detail-summary-info">
+                  <div style="margin-top: 20px !important; margin-bottom: 20px !important;" class="uxg-body-1">LEVEL 1</div>
+                  <!-- <div class="uxg-subtitle-1">{{ account.accountNumber }}</div> -->
+                </div>
+              </div>
+              <div class="account-detail-card-content">
+                <div class="account-detail-card-content__static">
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      <i class="fas fa-check-square" style="color: #c137a2;"></i>  
+                      Some attractive text
+                    </div>
+                    <!-- <div>
+                      {{ account.accountType || 'not available' }}
+                    </div> -->
+                  </div>
+          
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      <!-- <i class="fas fa-check-square" style="color: #c137a2;">  -->
+                         Some attractive text
+                    </div>
+                    <!-- <div>
+                      {{ account.ownerName || 'not available' }}
+                    </div> -->
+                  </div>
+          
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      <!-- <i class="fas fa-check-square" style="color: #c137a2;">   -->
+                        Some attractive text
+                    </div>
+                    <!-- <div>
+                      {{ account.openDate || 'not available' }}
+                    </div> -->
+                  </div>
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      <!-- <i class="fas fa-check-square" style="color: #c137a2;">   -->
+                        Some attractive text
+                    </div>
+                    <!-- <div>
+                      {{ account.alternateAccountNumber || 'no available' }}
+                    </div> -->
+                  </div>
+                </div>
+                <!-- <mat-divider [vertical]="true"></mat-divider>
+                <div class="account-detail-card-content__status">
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">Interest paid</div>
+                    <div>{{ account.details[2].value }}</div>
+                  </div>
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">Interest paid last year</div>
+                    <div>{{ account.details[3].value }}</div>
+                  </div>
+                </div> -->
+              </div>
+
+            </div>
+            <div class="flip-card-back">
+              <div class="price-cta">
+              <div class="price-box">
+                <span style="margin-bottom: 5px;" class="price-only">Only</span>
+                  <br>
+                  <span class="price-value">$2.95/mo*</span>
+              </div>
+              <a href="#popup" class="btn btn--white">Select</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="home-page-product-item">
+    <mat-card class="account-detail-card clickable" style="border-radius: 7px; background-color: transparent !important;" (click)="goToAccountsPage()">
+      <!-- <mat-card-title>
+        <div>{{ account.nickname }}</div>
+      </mat-card-title> -->
+      <mat-card-content>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="account-card-detail-summary">
+                <div style="margin-top: 15px;" align="center"><img src="data:image/png;base64,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"/></div>
+                <div class="account-card-detail-summary-info">
+                  <div style="margin-top: 20px !important; margin-bottom: 20px !important;" class="uxg-body-1">Account Number</div>
+                  <div class="uxg-subtitle-1">{{ account.accountNumber }}</div>
+                </div>
+              </div>
+              <div class="account-detail-card-content">
+                <div class="account-detail-card-content__static">
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Card type
+                    </div>
+                    <div>
+                      {{ account.accountType || 'not available' }}
+                    </div>
+                  </div>
+          
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Owner
+                    </div>
+                    <div>
+                      {{ account.ownerName || 'not available' }}
+                    </div>
+                  </div>
+          
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Created date
+                    </div>
+                    <div>
+                      {{ account.openDate || 'not available' }}
+                    </div>
+                  </div>
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Alternate account number
+                    </div>
+                    <div>
+                      {{ account.alternateAccountNumber || 'no available' }}
+                    </div>
+                  </div>
+                </div>
+                <mat-divider [vertical]="true"></mat-divider>
+                <div class="account-detail-card-content__status">
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">Interest paid</div>
+                    <div>{{ account.details[2].value }}</div>
+                  </div>
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">Interest paid last year</div>
+                    <div>{{ account.details[3].value }}</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="flip-card-back">
+              <div class="price-cta">
+                <div class="price-box">
+                  <span style="margin-bottom: 5px;" class="price-only">Only</span>
+                  <br>
+                  <span class="price-value">$2.95/mo*</span>
+                </div>
+                <a href="#popup" class="btn btn--white">Select</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="home-page-product-item">
+    <mat-card class="account-detail-card clickable" style="border-radius: 7px; background-color: transparent !important;" (click)="goToAccountsPage()">
+      <!-- <mat-card-title>
+        <div>{{ account.nickname }}</div>
+      </mat-card-title> -->
+      <mat-card-content>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+
+              <div class="account-card-detail-summary">
+                <div style="margin-top: 15px;" align="center"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAB2AAAAdgB+lymcgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABMSSURBVHic5Zt3fFTXlce/UyXNaFRHFfUKQg2JDgZsigkEg5Hx2sbBGzZ2nMRJFpJ4U9Yl3t3YTgzBDiRem+C1jY0LzcbYOMjCYIoEkmhCBRUkmvqojEbSaDR6+8ebGc1IM9JIcsp+9nw++ui9d8v5nTPnnnvueefB/3OSjNKWZ7m+CxAmyEsDLAaWAdlACBBkaWsGGoAi4C8WvvoJ8psw/jmWQQIwewJAAoFngXa7+Ub70wMvIyppvOQWfvkIE6wbcp0/DhBrgTcAH4kEEtKDSZkRTkJGMAHBarx9PQDo6jCiazJQeaGJ0nO3qb7c5C0I/Ah4xPL30Th4u4Xf1RKQALVAlOX+puV6LGb0HPDvgCR19iRWbcwgKinArYHXr+o4tOsiJfm3sPB8DtGK3CW38btSwGzgTFhYOAD19bdBNCl3rWAzsEUqlbD6O5kse2iqu8Ad6OShSt57+Rzm/gGAHwOvuDnUbfxSFxPcD7B0+TdYsny59dk6F32H0jLgtxKJhMeeWzBu4QHmr0rkO8/cgUQiAdiK6ETdIbfxu1JAjjjBcpYt/4b12X1uMJYD2wDZqo3pZMyPdBOva8q8I5IVj6QByIDtjOy3rOQ2fmeTyYAoqUxGWnoGAFKZjAGzOcrSZh6B8aPAlLAYP5avT3UDp3u0YkMaRcfqaKjrmAxsBF4bofuY8DtTgAeAUqG0mh4KhQKj2QygBHpGYP4EwLSFUXx58Cr1te3U13ZQX9uOl1pJ5h2RZC2KJmaKFskQ7yMIUFvWQvGXdVz46gY9hj7CYvwIi/ElLMaPaQui+OztywA/GEUBY8LvzAn6AW0aHx9Oni0CYN6MLLr0emtbhwvGk4GyEYDZKCBETdbCKLIWRQNQ/GUdxcevo2s0uDMcIAmodNE2JvzOLEAJotasZHetHAHUagCNQs5kXzWJGjXJPmoSfdQk+qi41W3k8M0mPr3VzK1GA7kflJH7gaO+Jqk8WTEpiJURwUxSeVDV2c3VTgMVnQYq9QbK2g109fdbeb3kAseY8H+dCkgD+M/MJO6NEgO4vIZWNheWIQFeyErmqfQE/j09gfO6TpsyAJvQ0wJ8xPi1oZXH80ts476dEAHAvroGNhWW2Xj9oykgESDa28v24BfFFTT0GG3X+SvmIgGyAnzICvDhqfQEpxM5Gzdk7uQRcIwJv7NtcDwKSACmAIR7eYyAbWI0SeVpvUyx8HRGX5cCBvvaXTtTwD9JJBQDmniNimDPwS4vZCUT5uVBuJcHL2RPdoF3OLkaF+KpJF6jAtBYeN4/UfwTXQKbgK2CADO0vrwyPQWp3f52Z2ggBSvmIgCVnQberL7F2ZZ2arq60RlNtPWZAPBXKgjwUBDnrWKW1o/ZQX625WJPUomE3fMy+FFhKedaOjTA+0AY4slxPPjHrAB7+87BzhOfa+lg/uf5zND6cmdIIAtDA+g1Dwx6/u5eJ6xEqu8xUt9j5Ep7F4duNgGOO4KnTMrxBh3HGls519KBWXA402wFrgMHxojfpQI8AOQjazAE+DMgXfpACt4+HpQU3Ka6pIn85nbym9t5vqTaYVI/rYrkrFCSMkOISPBH4++Jt4/lONxpRN/Wy41KHZUXm6gobuBWSzevV97g9cobDvNIZRISU0NInRVOV6eRo++VSoFdwEnExIo7+EdUgBJAqbRbQ8pha+j7gG9CejBrH88CYNlDU+kxmCgvqudKwW3KCuuRyiRkzncd/VnJP0iFf5CKqKQA5q1McIgKi49fZ8AsMHVWOFNnhTM5Owwv9aBwNSXNVJc0+wHfQzw2u4N/dAWMsobuAbh7yEnPS61g2oIopi2IYiIkkUBsipbYFC05388ese/d61P54y+OgRgc2RTw194GkwGikwNHEeWvTzGTbRis28W4FGDNnTmfYLgJeQFIZa5O0387ksps60pl+e8Ofpu8bsYBzjVYW97iFNSB185zrcx523joWlkLB14777ytdBgft/HDSD5AOboJ5b5fRsqMcAfndun0Tf7y7hVy3ytl8boprNiQhqed0xoL9RpMHH7rEnkfljMwIBCfGkT63AhbuyAw7EA1FvwwwVC4vKieY/vKHQZPmR5mS4Mdfb+Upx/+iGP7yunp6nMl5zDq6eojb285Tz/8EbnviwIue3AqU6aHOfTL21tGRXHDuPHD13AY2rujCLlCyoLVSWJfpYx7H5tG9qJo9u4opPJiEx/8oZADr50nY14ECWnBxE4NwjfQC7WPOJ2ho48OXQ81V5qputTEpVM3MfWJiZvEjBDu+0H2sIzy8QMV7PtjMYhr2X6D/ZsqYJMgCL/f8/uzVJxv5KHNM1FbgpuopAA2v7yMi6ducOJgJWVF9RTm1VGYV+eEpSNJpBJSZoSzcE0S6fMiHNp6DCb2v1rMyUO2fMjPgRfHiX/MkeDQUHIb4huf7cVf1qmvnm9g2YNTWbAmCQ9PceqMeZFkzItE12ig9Oxtaq60cKNSh76jF0OHuCzUvko0vp5EJgYQN1VLysxwAkLUDoyMvf0cP1DB0fdK6eowAnQhpsfeGqKAseB3qgCFOMjpacqZN/sfoADY0dVhvHP/q8V8tPMCc5bHMWNxLHGpQcgVUgJC1Mxflcj8VYlOpnBO/aYBakqaOZt7jfzPa6zvBwC+QBS+YqL4rQq4DYQD83FiQnJHE7rDcn3Lbp4y4ClgJzDZ3D/AyU+qOPlJFQqljNTZk1j7eBbacG83xIaW213sf7WYkvxbNl8whNfTOAo/bvxW5/E84loaCz0P/BJIlkgkLwqCcA8g8dR4kLQoDqlMQvXp6+ibugDwUitZ90Q2s+6OQyp1figYGBDIP1LDhzsK6TWIR2VNsDfx86KRK2WU/qWS7jYxqSuRSL4UBOFHwOWJ4JdZbr5CNI84xNfYI9EtYAewXeWp2GLqH3gDmCz3kEvSV01m6c8WEDM9goj0MGrOXKerpZvMqfHcvNXCxVM3Kcqro7fHhFwhQyKVYOzpp76ug4LPa9j9UgFnPqum3zRA5tR4GprbCIzyY/GP5xE+NYSpdyeiVClpvtqKud8cA3zPS6mI7zcP/BYwjhH/s4DZ2U/xOvCdh+6axdyUeABOXaliz7Gz1rZNWn/10/qu3s1Gk1kuQdyHVj27hPDUwbfZzdWt7P+3I/j5qKk5s5tDR8/wzJa3qL0xbN92oNioMH79kw2sWjqH+LnfQteu594XlhOcMHjuqC9r4uOnjmLlrZRLzd5eyj/r9L0/A7aMgv8xe34uAyGZdLBJbon5FUp5tlqpaG9pMzxpNJnl84P9yQr0BcBsclyrlz4WA5hH16/EW+3Fg2vu4sqxnezZ8SvWr11MUtzg9pYUF8HDOUvYs+NXlOS9zgOr70St8mTjA+J7vcuHHYOt/t5+AKYH+rIyIhhT/4BMp+99TKWU6+QK6WxX+BlLHGA3CJlUXCmmvv4sE5CgUfG77MlkB/ry06Jyilo7MOi6bf0Num5q8m+gkMv43oZVtucKuZyclXeQs1L0Q8oYUcCSvJ1OYMAT/7yGl3ceoOb0dWatz8RbK26NXa0irzgLjsKECJ4sKqdK3y0DUl3hd6aAoRbgiZhxddCgSXythIdG3EbDvDzJtvzy1iywFRTA5cMVDJgHuO+bC4kIC2K8FB4ayNoV8xkwD3DlyFXbc4OFl5X39EBfQi3XHt7i/77+QYu0U0YKQ2IBewVMQtzP02FQaH1PL5+dvQyAytcThaecr5p0VHSKr7GsjA0tIihTj4ny3CoAnvj26vHKbqNNj+YAUHa0CpPF9LssvEK9xDR5lb6bU01tyD3kqPzEZ5+dvYy+R8xDmgaVkWGRMXyoAjyAw0C6XCmai8pDSVePkT8czEOnF4X19PUkcWEsAG9Xi2FA2BALqDhWg9HQR2iQPxVVNzCbbcHLmMlsHqD0ah0hQf4YDX1U5Il5RutyC1OJvN+ouokAJC+Kw8tXVIBOb2Db/lw6DD2oPETLt8iWYZFVaa+Ax4EMn1BvAmP9bcxfOfgFt1vb8deIa08CpH4jGSTwYV0D7X0m/C3HztbaNj5/8Tj5b4vn9obmNjb+5CXSFj/K7n25Y1KE2TzA7n25pC1+lI0/eYnG5jYA8t8+z+cvHqf1mnjvr5DTaepn33VxZ0m5OxHBkjHW+njT2NbJKwe/wGQWLUcbG4BPiDdAJkN2gwJAWLJ5vhCSpBUAQevrLQBCiL+P8N2VC8Xr5CDhwe2rhYBIXwEQQr08BJlEMqzKS+OtEt7Z/kshKS7C3aowl3/RESHC9v/6oaDxVg1rk0kkQqiXhwAIAVF+woPbV9vwf3/VIiE80E9s06ht+Bdvmm8df8ZeAQZA2PDnHCEw2t/GIMTfR/jNxrXCk/cvFwBB6aVwCjJC6y8sTE8SlmSlCIAwPSNJ6Ks9IvRUfyrs2vJTITk+csyCJ8dHCru2/FTorjos9NUeEbLTkwRAWJqVIixMTxIigvydjlNYMD55/3LhhX/JsSkBEAJj/IVHdt1nve+CwW2wF1BJZVJ69aLjCPLV8K9rl6Dx8rQ5k74eE0A/8BlQh6Ug4ucPiGUoBeXXAIiPFn2MTCbl4ZwlPJyzBGdk3Qb7ao84bbenhJhwii5dJSzQl5nJoh96Yvu71ubtiFVgK0w9JjmInt/by4MfrrmLrXuP0tyhp7ez1z5z0AuDPqAM4NblBhSe4pr+1pLZaCxeVi512C3PIKbFf4il2KDHKB5rWzr0NrBfN1nnbG4XeXQbbRmmNguW1dhVgVm3cY2XJ99aItZJKrwU3Lpki0TLYFABbwCcffcC/ZbTl6968DW3zDH7u8fuuh6grUv0ys02BUwah4gjk9WqrDzau2xxR71dt/esF/aBkI9FFnOfmXN7Llof74LBJbAb+G5HvX6GNc38zFsfO8PRihhPW6kYmFxxs4HwQD+aLL9O/CgW0Gfq59ktb9ruf/XiLp7ZvAGlwnUBWLzNAsTTZfngmaLIrttriC9HApzhN+i6GTALIDr9d2DQAozAN4HCgSFvHoeQGdEHWOkQQGFFHQNgU8DufbkUnC+3bUlD6ddb3+KlVz+03f/uTx/w3Na3nfYVBIGC8+W8s/8LABrbOxkACq/WWrt8YtfdxAhVbBbZzgGrgD4YXiQlQ1zX6t89tg4vyx7fY+zjZ6/vBTH95W/XXwVUAWH3zMng4zMXHSaLDA8mZ8V8clYuYGZmsq1qK3rWeuobW3norjkIwJ68M4SFBFJX8I5N6LMXKth3+AT7Pj3JjdtNDvOump3BofyLIB5tE3Gs/GoHfF3g70IslLIpaajNmS1KcHB8cpntMDE0p9aNaHJ/+uxcCQBJd8ahCVJTdaKWG7eb2LZzP9t27iciLIg1y+eSs2KBbbBgERbE94GlV+vY9+lXvHswj+ra27Z+3loVMTMj6enopfpUHUcKS6xNzzG8bM9jBPzD6gSd5QPMuK4gNTNcaTLEau6VAPc+fzfBiVoA2m50UH2mjqoTtXQ0jK383yp0/NxoQpODQAKNV1s4+MvPrV0+QfT8Q0PMMeF35nVOI+bWnNFpF5NuA1Z6a1UEJ2htDf6RvkyPTGf6unQaK1uoOXOda/nX0Tc7rwfUBKmJnR1F3JwoQhK1w36ekEQtmiC1dfw2hgs/ZvzOFHCHk2ej0QqAuLnRzm1KAiFJWkKStMx5JGsc0w/OEzs7ikuHyqw8v3DSa0z4ZaN3cQcWrwG+CNB2sxOlSoF3gGrkD3LGQgI0VrZw+VAZDRXNGHQ9AJGIVjAh+jogzgbOhHh60NhrtD301qqJm+NozsKAwMdPH6WhvNnpRKGTg7jnuaVIpBKb0DWn66jJv27LAQDY8RrLNwx/NdoKCI8lRgq5S2cKm6bECDHeXg4HFHWgSkhdkSxk5aSOegiauT5DyL4/TfAJ9XZ4Hu7lIXw7IULYtzBLeDTRdrjaMlHwE7UA26cpH92ZzbQAH0BEdsFSDnvYeYXYI4ivtOxpA/Cm/YNJKk9WWirFMi1ltADFuk7WHCuC8X3KM0yAidAc4LRcIiEzwIc0fw3pfhrS/DUk+qhtaesLuk5+X3qNLxt1IAZOU3CMKEH0R1eA5EUhAWxKiXUQurHXyOU2PZfb9Fxq13OiUYdpQLBiGPcycOfri5FoHUC/IFDY2kFh62AlukYhJ9lHTZq/hlQ/b6oHDy//wXDhQdxOfwO8Wd3VTVNvH9tKr3GpXc9FnZ4Wo8v6gvF+0QZM3AJqgejlP18EQHNNKy3VOpqqW+lpd1oYeQ0xdHUVr8sQvwOIHdqgVCsJiPRFGxdAUHwAUqmUL14+BWJeIma8AkzUAgIAtLH+qANVRE8fPAZ3tRhortbRXN3K5cMV9Bv7wfI6aoT5zJY+b8o95KStTCYoPpCg+ADbO4HB+W0W5TcRASZa5pULcPzVAodtCsRtMHZWJH6TfKzCV2I5go5C7wCV/cZ+/Cb5EDsr0qnwJ/67wAHD34uSEXME7uT5Noxh3g1uztmK5TuFvydFAB8gHqNdAT3B2KJOmWWMq/k6gL38Awj/f57+F5IrdQrm5+bXAAAAAElFTkSuQmCC"/></div>
+                <div class="account-card-detail-summary-info">
+                  <div style="margin-top: 20px !important; margin-bottom: 20px !important;" class="uxg-body-1">Account Number</div>
+                  <div class="uxg-subtitle-1">{{ account.accountNumber }}</div>
+                </div>
+              </div>
+              
+              <div class="account-detail-card-content">
+                <div class="account-detail-card-content__static">
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Card type
+                    </div>
+                    <div>
+                      {{ account.accountType || 'not available' }}
+                    </div>
+                  </div>
+          
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Owner
+                    </div>
+                    <div>
+                      {{ account.ownerName || 'not available' }}
+                    </div>
+                  </div>
+          
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Created date
+                    </div>
+                    <div>
+                      {{ account.openDate || 'not available' }}
+                    </div>
+                  </div>
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                      Alternate account number
+                    </div>
+                    <div>
+                      {{ account.alternateAccountNumber || 'no available' }}
+                    </div>
+                  </div>
+                </div>
+                <mat-divider [vertical]="true"></mat-divider>
+                <div class="account-detail-card-content__status">
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">Interest paid</div>
+                    <div>{{ account.details[2].value }}</div>
+                  </div>
+                  <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">Interest paid last year</div>
+                    <div>{{ account.details[3].value }}</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="flip-card-back">
+              <div class="price-cta">
+                <div class="price-box">
+                  <span style="margin-bottom: 5px;" class="price-only">Only</span>
+                  <br>
+                  <span class="price-value">$2.95/mo*</span>
+                </div>
+                <a href="#popup" class="btn btn--white">Select</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<footer style ="margin-top: 50px !important; margin-bottom: 10px !important">
+  <div style="font-size: 12px;">
+    <!-- <br>Icons made by <a style="color:#c137a2; text-decoration: none;" href="https://www.flaticon.com/free-icon/donatello_1507115?term=cartoon&page=1&position=6&related_item_id=1507115" title="surang">surang</a> from <a style="color:#c137a2; text-decoration: none;" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+    <!-- <br>Icons made by <a style="color:#c137a2; text-decoration: none;" href="https://www.flaticon.com/authors/surang" title="surang">surang</a> from <a style="color:#c137a2; text-decoration: none;" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+    <img style="margin-right: 5px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGhSURBVDiNjZFLSxthFIafbzJjQghGx0scjAoacCFaUDfdCa4E6UIQdVW6r1joTxDppiLo1rU7EXVRWkRRXFRo8QJ2o0JUNMEUozZeM5nPxWjHoDPx7N4D5znve44YG//d02j4Onhl7STNn0OD7VOPWq3RxbvOmHz/WkDWVAzAAQBgmhCPg5Te03V1gJbXsgFS2pBCZVnPWjZA08AwCjvw+10AAOFwYQcA5C9xIiQS3g6EgEiEm6xQn7YdUVzsCZhJ+Vk7CZIqld0Dc39+XR3kRmY/Ns84Do6PXzwSwPcbnW9GGcnFc2RWqnqpaNPflkx2jW7E1f/2DMN1+/ZlmND6KQFLoSpo8qn6L1/3NT1YGehzImQyrg7uCBH13dLfcEmZZvJlp4JMtUAJiaATwSN/NHPNQrSciqMsP1I6ZzmVyljAPN+VyzZAUew3ukB6QxbJNKy01KJe5IiUFF3/O7Im5gebpm2AZXm+0Q98JsmWrGf+wre+unX1YWm4dRMe36goEIu5RgAQwBsgkbb2hh+GAdTDUzm3vOc5m1cHabnwVN8DE8Cahe4v4qQAAAAASUVORK5CYII="/>
+    Icons made by <a style="color:#c137a2; text-decoration: none;" href="https://www.flaticon.com/authors/surang" title="surang">surang</a> from <a style="color:#c137a2; text-decoration: none;" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </div>
+</footer>

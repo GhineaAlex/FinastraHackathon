@@ -1,0 +1,69 @@
+.account-detail-page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-bottom: 32px;
+  .acount-detail-page-overview {
+    display: flex;
+    flex-grow: 100%;
+    margin-bottom: 32px;
+    padding: 32px 64px 32px 64px;
+    flex-direction: column;
+    .acount-detail-page-overview-info {
+      display: flex;
+      padding-top: 32px;
+      align-items: center;
+      .acount-detail-page-overview-info-detail {
+        display: flex;
+        flex-direction: column;
+        padding-right: 64px;
+        .uxg-subtitle-2  {
+          padding-bottom: 8px;
+          margin-top: 16px;
+        }
+      }
+      .acount-detail-page-overview-info-action {
+        display: flex;
+        min-width: 196px;
+        justify-content: space-between;
+      }
+    }
+  }
+  .account-page-detail-page-content {
+    display: flex;
+    padding-left: 32px;
+    padding-right: 64px;
+    .account-page-detail-page-content-column {
+      display: flex;
+      flex-direction: column;
+      flex: 50%;
+      padding-left: 32px;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .acount-detail-page-overview {
+      padding: 16px 32px 16px 32px;
+
+      .round-icon {
+        display: none;
+      }
+
+      .acount-detail-page-overview-info {
+        padding-top: 8px;
+        flex-direction: column;
+        align-items: end;
+      }
+    }
+    .account-page-detail-page-content {
+      padding-left: 16px;
+      padding-right: 16px;
+      flex-direction: column;
+      .account-page-detail-page-content-column {
+        flex: 1;
+        padding-left: 0px;
+      }
+    }
+
+  }
+}

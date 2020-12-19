@@ -1,0 +1,49 @@
+<mat-card>
+  <div class="account-transaction-header">
+    <div mat-card-title>Transactions - {{selectedDateLabel$ | async }}</div>
+    <div>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" [max]="maxDate" style="display: none;">
+        <mat-datepicker #picker 
+          startView="year"
+          (monthSelected)="chosenMonthHandler($event, picker)"
+        ></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="picker.open()">Pick a month</button>
+    </div>
+  </div>
+  <mat-tab-group [selectedIndex]="selectedTabIndex" (selectedIndexChange)="setSelectedTabIndex($event)">
+    <mat-tab label="View All">
+      <ng-container *ngIf="searching$ | async; else listAccountTransactions">
+        <div class="account-transaction-spinner">
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-container>
+    </mat-tab>
+    <mat-tab label="Incomes">
+      <ng-container *ngIf="searching$ | async; else listAccountTransactions">
+        <div class="account-transaction-spinner">
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-container>
+    </mat-tab>
+    <mat-tab label="Expenses">
+      <ng-container *ngIf="searching$ | async; else listAccountTransactions">
+        <div class="account-transaction-spinner">
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-container>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+<ng-template #listAccountTransactions>
+  <ng-container *ngIf="accountTransactions?.length > 0">
+    <ffdc-account-transaction-list [accountTransactions]="accountTransactions"></ffdc-account-transaction-list>
+  </ng-container>
+  <ng-container *ngIf="accountTransactions?.length === 0">
+    <div class="no-transactions">
+      <mat-icon>sentiment_dissatisfied</mat-icon>
+      <p>No transactions</p>
+    </div>
+  </ng-container>
+</ng-template>

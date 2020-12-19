@@ -1,0 +1,26 @@
+.round-icon {
+  border-radius: 50%;
+  margin-right: 16px;
+  margin-left: 12px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clickable {
+  cursor: pointer;
+}
+.uxg-nav-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uxg-toolbar-logo--fix {
+  position: absolute;
+  top: 56px;
+}
+
+@media all and (max-width: 600px) {
+
+}
