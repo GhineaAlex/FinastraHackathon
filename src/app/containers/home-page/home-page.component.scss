@@ -84,13 +84,14 @@
 }
 
 .flip-card-front {
-  background-color: #414141;
-  color: #bbb;
+  background-color: transparent;
+  color: #414141;
   border-radius: 7px;
 }
 
 .flip-card-back {
   background-color: #414141;
+  // opacity: 0.5;
   color: #bbb;
   border-radius: 7px;
   transform: rotateY(180deg);
@@ -108,7 +109,7 @@
 
 .price-box {
   text-align: center;
-  color: #fff;
+  color: #bbb;
   margin-bottom: 40px;
 }
 
@@ -132,6 +133,7 @@
   transition: all 0.2s;
   position: relative;
   font-size: 12px;
+  font-weight: 400 !important;
   border: none;
   cursor: pointer;
 }
