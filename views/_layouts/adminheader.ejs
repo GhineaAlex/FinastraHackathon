@@ -19,23 +19,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;" >
-  <a class="navbar-brand" href="/" target="_blank">Investment Fabric</a>
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #694ED6;" >
+  <a class="navbar-brand" href="/" target="_blank" style="color:white">InvestFabric</a>
   <div class="collapse navbar-collapse" >
     <ul class="navbar-nav mr-auto">
       <li>
-        <a class="nav-link" href="/admin/categories">Categorii</a>
+        <a class="nav-link" href="/admin/students" style="color:white">Your journeys</a>
       </li>
       <li>
-        <a class="nav-link" href="/admin/students">Studenti</a>
-      </li>
-      <li>
-        <a class="nav-link" href="/admin/diplomas">Diplome</a>
+        <a class="nav-link" href="/admin/diplomas" style="color:white">Investments</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <% if (user) { %>
-      <li><a href="/users/logout">Salut, <%= user.username %> Logout</a></li>
+      <li><a href="/users/logout" style="color:white">Hi, <%= user.username %> Logout</a></li>
         <% } else { %>
         <li class="nav-link"><a href="/users/register">Register</a></li>
       <li class="nav-link"><a href="/users/login">Login</a></li>

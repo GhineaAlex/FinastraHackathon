@@ -157,6 +157,9 @@ var adminDiplomas = require('./routes/admin_diploma.js');
 var diplomas = require('./routes/diplomas.js');
 var users = require('./routes/users.js')
 
+var labels = ['label 1', 'label 2'];
+var data = [1, 2];
+
 app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
 app.use('/admin/students', adminStudents);

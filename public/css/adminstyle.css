@@ -26,3 +26,11 @@ footer {
 .mycell {
     max-width:2px; 
 }
+.btn,
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: #694ED6;
+  border-color: #694ED6;
+}  

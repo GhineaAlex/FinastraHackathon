@@ -51,25 +51,13 @@ router.post('/add-student', isUser, function(req, res){
     
     req.checkBody('lastName', 'Trebuie introdus numele de familie').not().isEmpty();
     req.checkBody('firstName', 'Trebuie introdus prenumele').not().isEmpty();
-    req.checkBody('birthCountry', 'Trebuie introdusa tara de nastere').not().isEmpty();
-    req.checkBody('birthCounty', 'Trebuie introdus judetul de nastere').not().isEmpty();
     req.checkBody('gender', 'Trebuie introdus sexul').not().isEmpty();
-    req.checkBody('cnp', 'Trebuie introdus CNP').not().isEmpty();
-    req.checkBody('idCi', 'Trebuia introdusa seria').not().isEmpty();
-    req.checkBody('collegeName', 'Trebuie introdus numele Facultatii').not().isEmpty();
-    req.checkBody('typeOfStudy', 'Trebuie introdus tipul de studiu (Cu Frecventa, Fara Frecventa, Invatamant la Distanta)').not().isEmpty();
-    
+  
     var lastName = req.body.lastName;
     var firstName = req.body.firstName;
     var birthDate = req.body.birthDate;
-    var birthCountry = req.body.birthCountry;
-    var birthCounty = req.body.birthCounty;
     var gender = req.body.gender;
-    var cnp = req.body.cnp;
-    var idCi = req.body.idCi;
-    var dateCi = req.body.dateCi;
-    var collegeName = req.body.collegeName;
-    var typeOfStudy = req.body.typeOfStudy;
+
     var emailStudent = req.body.emailStudent;
 
     var errors = req.validationErrors();
@@ -77,7 +65,6 @@ router.post('/add-student', isUser, function(req, res){
     if(errors) {
         res.render('admin/add_student', {
             errors: errors,
-            cnp: cnp,
             user: req.user
         });
     } else {
@@ -92,14 +79,8 @@ router.post('/add-student', isUser, function(req, res){
                     lastName: lastName,
                     firstName: firstName,
                     birthDate: birthDate,
-                    birthCountry: birthCountry,
-                    birthCounty: birthCounty,
                     gender: gender,
-                    cnp: cnp,
-                    idCi: idCi,
-                    dateCi: dateCi,
-                    collegeName: collegeName,
-                    typeOfStudy: typeOfStudy,
+                    
                     emailStudent: emailStudent
                 });
 

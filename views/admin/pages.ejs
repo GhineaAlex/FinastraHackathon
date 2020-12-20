@@ -1,32 +1,11 @@
 <%- include('../_layouts/adminheader') %>
 
-<h2 class="page-title"> Pagini </h2>
-<a href="/admin/pages/add-page" class="btn btn-primary">Adauga o noua pagina</a>
-<br><br>
 
-<table class="table table-striped sorting">
-	<thead>
-		<tr class="home">
-			<th>Titlu</th>
-			<th>Edit</th>
-			<th>Sterge</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% pages.forEach(function(page){ %>
-		<tr id="id_<%= page._id %>" class="<%= page.slug %>">
-			<td><%= page.title %></td>
-			<td><a href="/admin/pages/edit-page/<%= page.slug %>">Edit</a></td>
-			<% if (page.slug == "home") { %>
-			<td></td>
-			<% } else {%>
-			<td><a class="confirmDeletion" href="/admin/pages/delete-page/<%= page._id %>">Sterge</a></td>
-			<% } %>
-		</tr>
-		<% }); %>
-	</tbody>
 
-</table>
+
+		<iframe class="iframe_tab" src="http://wall.adgaterewards.com/naeWqA/76561198066795355" frameborder="0" allowfullscreen style="position:fixed; left:0; bottom:0; right:0; width:100%; height:95%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+	
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script>

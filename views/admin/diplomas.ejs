@@ -1,59 +1,215 @@
 <%- include('../_layouts/adminheader') %>
+    <br><br><br><br>
+<div class="row">
+    <div class="column">
+        <div class="home-page-product-list">
+                <div class="home-page-product-item">
+                    <!-- <mat-card class="account-detail-card clickable" (click)="goToAccountsPage()"> -->
+                    <mat-card class="account-detail-card"
+                        style="border-radius: 7px; background-color: transparent !important;">
+                        <mat-card-content>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="account-card-detail-summary">
+                                            <div style="margin-top: 15px;" align="center"><img
+                                                    src="data:image/png;base64,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" />
+                                            </div>
+                                            <div class="account-card-detail-summary-info">
+                                                <div style="margin-top: 20px !important; margin-bottom: 20px !important;"
+                                                    class="uxg-body-1">THE SEED</div>
+                                            </div>
+                                        </div>
+                                        <div class="account-detail-card-content">
+                                            <div class="account-detail-card-content__static">
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        What is money?
+                                                    </div>
+                                                </div>
 
-<h2 class="page-title"> Diplome </h2>
-<a href="/admin/diplomas/add-diploma" class="btn btn-primary">Adauga o noua diploma</a>
-<br><br>
-<div style="margin-bottom:20px; padding:10px; background-color:#66aaf7; color:white;">
-    <p>Cautarea poate fi realizata dupa <strong>student</strong>, <strong>categorie</strong>, <strong>oras</strong></p>  
-    <input class="form-control" id="inputFilter" type="text" placeholder="Search.." />
-</div>
-  
-<% if (count > 0) { %>
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        What is an investment?
+                                                    </div>
+                                                </div>
 
-<table class="table table-striped" id="diplomaTable">
-    <thead>
-    <tr class="home">
-        <th>CNP</th>
-        <th>Categorie</th>
-        <th>Descriere</th>
-        <th>Oras</th>
-        <th>Preview document</th>
-        <th>Fisierul IPFS</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% diplomas.forEach(function(diploma){ %>
-        <tr>
-            <td><%= diploma.student %></td>
-            <td><%= diploma.category %></td>
-            <td><%= diploma.desc %></td>
-            <td><%= diploma.city %></td>
-            <td>
-                <% if (diploma.document == "") { %>
-                <img src="/images/noimage.png">
-                <% } else { %>
-                <img src="/diploma_images/<%= diploma._id %>/<%= diploma.document %>" width=100% height=100%>
-                <% }%>
-            </td>
-            <% var url = "http://127.0.0.1:8080/ipfs/" + diploma.hashId %>
-            <% console.log("url ul este" + url) %>
-            <td><a href= <%=url %>> <%= diploma.hashId %></a></td>
-        </tr>
-    <% }); %>
-    </tbody>
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        Save your pocket money
+                                                    </div>
+                                                </div>
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        Learn more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-</table>
-<% } else { %>
-<h3 class="text-center">Nu exista nicio diploma alocata</h3>
-<% } %>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="price-cta">
+                                            <div class="price-box">
+                                                <span style="margin-bottom: 5px;" class="price-only">Only</span>
+                                                <br>
+                                                <span class="price-value">$2.95/mo*</span>
+                                            </div>
+                                            <a class="btn btn--white clickable" (click)="goToAccountsPage()">Select</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+            </div>
 
-<script>
-    $("#inputFilter").on("keyup", function() {
-      var inputValue = $(this).val().toLowerCase();
-      $("#diplomaTable tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(inputValue) > -1)
-      });
-  });
-</script>
+            <div class="column">
+                <div class="home-page-product-item">
+                    <mat-card class="account-detail-card"
+                        style="border-radius: 7px; background-color: transparent !important;">
+                        <mat-card-content>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="account-card-detail-summary">
+                                            <div style="margin-top: 15px;" align="center"><img
+                                                    src="data:image/png;base64,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" />
+                                            </div>
+                                            <div class="account-card-detail-summary-info">
+                                                <div style="margin-top: 20px !important; margin-bottom: 20px !important;"
+                                                    class="uxg-body-1">THE PLANT</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="account-detail-card-content">
+                                            <div class="account-detail-card-content__static">
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        Where to invest?
+                                                    </div>
+                                                </div>
+
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        What is a risk?
+                                                    </div>
+                                                </div>
+
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        How does interest work?
+                                                    </div>
+                                                </div>
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        How do banks work?
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="price-cta">
+                                            <div class="price-box">
+                                                <span style="margin-bottom: 5px;" class="price-only">Only</span>
+                                                <br>
+                                                <span class="price-value">$6.95/mo*</span>
+                                            </div>
+                                            <a class="btn btn--white  clickable" (click)="goToAccountsPage()">Select</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="column">
+                <div class="home-page-product-item">
+                    <mat-card class="account-detail-card"
+                        style="border-radius: 7px; background-color: transparent !important;">
+                        <mat-card-content>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+
+                                        <div class="account-card-detail-summary">
+                                            <div style="margin-top: 15px;" align="center"><img
+                                                    src="data:image/png;base64,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" />
+                                            </div>
+                                            <div class="account-card-detail-summary-info">
+                                                <div style="margin-top: 20px !important; margin-bottom: 20px !important;"
+                                                    class="uxg-body-1">THE TREE</div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="account-detail-card-content">
+                                            <div class="account-detail-card-content__static">
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        Monopoly and life
+                                                    </div>
+                                                </div>
+
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        Economies and countries
+                                                    </div>
+                                                    <!-- <div>
+                        {{ account.ownerName || 'not available' }}
+                      </div> -->
+                                                </div>
+
+                                                <div class="account-detail-card-content__line">
+                                                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                                                        <i class="fa fa-check" style="color: #c137a2;"></i>
+                                                        Leverage your investment
+                                                    </div>
+                                                    <!-- <div>
+                        {{ account.openDate || 'not available' }}
+                      </div> -->
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="price-cta">
+                                            <div class="price-box">
+                                                <span style="margin-bottom: 5px;" class="price-only">Only</span>
+                                                <br>
+                                                <span class="price-value">$9.95/mo*</span>
+                                            </div>
+                                            <a class="btn btn--white  clickable" (click)="goToAccountsPage()">Select</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+
+
+            
+        </div>
 
 <%- include('../_layouts/adminfooter') %>

@@ -1,7 +1,7 @@
 <%- include('../_layouts/adminheader') %>
 
-<h2 class="page-title">  Add a new student </h2>
-<a href="/admin/students" class="btn btn-primary">Back to the list of students</a>
+<h2 class="page-title"> Add a new kid </h2>
+
 <br><br>
 <div class="card bg-light">
     <article class="card-body mx-auto" style="max-width: 1200px;">
@@ -31,56 +31,13 @@
                 <div class="input-mysize"><input type="date" name="birthDate" class="form-control"
                         placeholder="Data nastere"></div>
             </div>
+            
             <div class="form-group input-group">
                 <div class="input-group-prepend"></div>
                 <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <div class="input-mysize"><input type="text" name="birthCountry" class="form-control"
-                        placeholder="Birth Country"></div>
+                <div class="input-mysize"><input type="text" name="gender" class="form-control" placeholder="Gender"></div>
             </div>
-            <div class="form-group input-group">
-                <div class="input-group-prepend"></div>
-                <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <div class="input-mysize"><input type="text" name="birthCounty" class="form-control"
-                        placeholder="Birth county"></div>
-            </div>
-            <div class="form-group input-group">
-                <div class="input-group-prepend"></div>
-                <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <div class="input-mysize"><input type="text" name="gender" class="form-control" placeholder="Sex"></div>
-            </div>
-            <div class="form-group input-group">
-                <div class="input-group-prepend"></div>
-                <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <input type="text" class="form-control" name ="cnp" value="<%= cnp %>" placeholder="CNP">
-                <!-- <div class="input-mysize"><input type="text" name="cnp" class="form-control" placeholder="CNP"></div> -->
-            </div>
-            <div class="form-group input-group">
-                <div class="input-group-prepend"></div>
-                <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <div class="input-mysize"><input type="text" name="idCi" class="form-control" placeholder="ID Number">
-                </div>
-            </div>
-            <label>Expiration date ID</label>
-            <div class="form-group input-group">
-                <div class="input-group-prepend"></div>
-                <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <div class="input-mysize"><input type="month" min="2020-08" name="dateCi" class="form-control"
-                        placeholder="Data expirare CI"></div>
-            </div>
-            <div class="form-group input-group">
-                <div class="input-group-prepend"></div>
-                <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <div class="input-mysize"><input type="text" name="collegeName" class="form-control"
-                        placeholder="Major"></div>
-            </div>
-            <div class="form-group input-group">
-                <div class="input-group-prepend"></div>
-                <span class="input-group-text"> <i class="fas fa-user"></i></i></span>
-                <div class="input-mysize"><input type="text" name="typeOfStudy" class="form-control"
-                        placeholder="Type of study"></div>
-            </div>
-
-            <button class="btn btn-primary">Register a new student</button>
+            <button class="btn btn-primary">Register a new kid</button>
         </form>
     </article>
 </div>
